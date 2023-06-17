@@ -1,0 +1,14 @@
+Three different behaviors that you made:
+1. Coconuts fall
+2. beach ball bounces
+3. Seagulls flap their wings
+
+One behavior that is not simple:
+Not simple: seagulls move to a random choice from user defined destinations
+
+Animated Articulated Figure:
+Articulated: snowmen wave their arms, turn their heads
+
+Other Behaviors that you made: (backup in case something above doesn't count)
+- beach ball spins
+- Snowmen spin

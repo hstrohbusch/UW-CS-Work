@@ -1,0 +1,1 @@
+Advanced Thing: Water in the fountain, advanced motion for seagulls (random choice from user defined destinations), mirrored reflection (dynamic texture map) for "snowbird" photo oportunity, seagull is skinned with a chicken photo, tree trunks and sand generated with noise

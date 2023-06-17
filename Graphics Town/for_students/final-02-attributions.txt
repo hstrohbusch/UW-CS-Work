@@ -1,0 +1,28 @@
+List all attributions here, this include "self-attributions":
+
+Self:
+Palm tree geometries/behaviors, seagull shape and behavior, beach ball shape behavior and texture, ground, mirror (adapted+modified my 09-07-01.js), snowman (adapted+modified my 06-08-01.js), beachhouse (adapted+modified my 08-06-01), truck shape (adaped+modified my 08-07-01), 
+
+Outside:
+Fountain 
+Model Information:
+* title:	Stylized fountain 3DEX tutorial
+* source:	https://sketchfab.com/3d-models/stylized-fountain-3dex-tutorial-1b88af909c6d4862a268823d0b0f1eed
+* author:	Hermi Marske (https://sketchfab.com/hermiMarske)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Stylized fountain 3DEX tutorial" (https://sketchfab.com/3d-models/stylized-fountain-3dex-tutorial-1b88af909c6d4862a268823d0b0f1eed) by Hermi Marske (https://sketchfab.com/hermiMarske) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+Textures: 
+
+Palmtree, sandy ground:I made the geometries, shapes, and behaviors by myself. The ground and the trunks of the trees use a shader that I used for 10-10-01.js that I modified. The original shader came from // Value noise by Inigo Quilez - iq/2013
+// https://www.shadertoy.com/view/lsf3WH 
+Seagull texture: https://www.pexels.com/photo/beak-blur-chicken-close-up-458825/
+BeachHouse roof: https://ambientcg.com/view?id=Wood066
+Truck Rust: https://ambientcg.com/view?id=PaintedMetal006
+Truck Wheel rubber: https://ambientcg.com/view?id=Fabric049
+Skybox: https://commons.wikimedia.org/wiki/File:Magpupungko_beach_area_spherical_360-degree_08-23-2017.jpg

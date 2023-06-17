@@ -1,0 +1,27 @@
+(Required) Two kinds of objects created for this assignment:
+1. Seagulls
+2. Palm Trees
+
+(Required) Five other kinds of objects that you created (possibly in previous assignments):
+3. Snowmen Duo (These are the snowbirds)
+4. Beach house
+5. Trucks
+6. Beach Ball
+7. Mirror
+
+(Optional) Backup Objects (more objects that you created, in case the ones above don't count):
+- none
+
+At least one of each type of object:
+Building/structure: BeachHouse
+Vehicle: Trucks
+Natural Element: Palm trees
+
+Object loaded from a model file:
+Model: Fountain
+
+An object with a shader that you wrote:
+ShaderObj: Palmtrees(trunks), ground
+
+Other Objects that you would like to note:
+There is as skybox

@@ -1,0 +1,1 @@
+This was the final project for the graphics class. We created a town called "graphics town" in which we showcased various techniques that we learned throughout the class. My work is in the for_students folder

@@ -1,4 +1,0 @@
-HuntersDesktop 6000 HuntersDesktop 4000 HuntersDesktop 4000 3000 0
-HuntersDesktop 7000 HuntersDesktop 5000 HuntersDesktop 5000 0 20
-HuntersDesktop 9000 HuntersDesktop 6000 HuntersDesktop 5000 0 0
-HuntersDesktop 9000 HuntersDesktop 7000 HuntersDesktop 5000 0 0

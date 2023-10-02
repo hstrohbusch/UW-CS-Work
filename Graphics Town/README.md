@@ -24,3 +24,9 @@ in class.
 The workbook content is Copyright &copy; 2022, Michael Gleicher.
 
 This workbook is provided under a Creative Commons Attribution-NonCommercial 4.0 International license. See https://creativecommons.org/licenses/by-nc/4.0/ for the explanation and https://creativecommons.org/licenses/by-nc/4.0/legalcode for the license itself.
+
+Here are some examples of my graphics town final running: notice the world controls, camera controls, generated textures, material types, reflections, and many other rendering techniques employed. I should note, that it looks much more impressive while actually running
+![wide](https://github.com/hstrohbusch/UW-CS-Work/assets/71783165/c8474661-a0f9-42fd-b38e-d318e30bb38b)
+![snowmen](https://github.com/hstrohbusch/UW-CS-Work/assets/71783165/af0f4aa7-05a9-480c-9cd5-0453647b4176)
+![seagulls](https://github.com/hstrohbusch/UW-CS-Work/assets/71783165/e91132cd-a49f-4452-ab02-2d5b6aa1326a)
+![reflections](https://github.com/hstrohbusch/UW-CS-Work/assets/71783165/aac80309-087c-4b9a-9053-282f1d8690c3)

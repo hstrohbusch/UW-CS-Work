@@ -9,12 +9,12 @@ import sys
 # parse arguments
 parser = argparse.ArgumentParser()
 
-parser.add_argument('-a', "--routetrace_port",required=True , type=int)        # port of this node
-parser.add_argument('-b', "--source_hostname",required=True)               # name of topology file
-parser.add_argument('-c', "--source_port",required=True , type=int)        # port of this node
-parser.add_argument('-d', "--destination_hostname",required=True)
-parser.add_argument('-e', "--destination_port",required=True , type=int)        # port of this node
-parser.add_argument('-f', "--debug_option",required=True, type=int)      
+parser.add_argument('-a', "--routetrace_port",required=True , type=int)         # port of this node
+parser.add_argument('-b', "--source_hostname",required=True)                    # name of source node
+parser.add_argument('-c', "--source_port",required=True , type=int)             # port of source node
+parser.add_argument('-d', "--destination_hostname",required=True)               # name of destination node
+parser.add_argument('-e', "--destination_port",required=True , type=int)        # port of destination node
+parser.add_argument('-f', "--debug_option",required=True, type=int)             # debugging option, detailed path
 
 args = parser.parse_args()
 

@@ -31,3 +31,9 @@ Moving on, I manually kill the emulator started at port 5000 (left). The rest of
 Then, I re-initialize 5000. The rest of the emulators detect this and rebuild their topographies and forwarding tables appropriately
 
 ![5000 reboot](https://github.com/hstrohbusch/UW-CS-Work/assets/71783165/115e4a85-df74-4137-b16e-91a28490728a)
+
+
+You can also use routetrace.py to trace the route between two nodes by giving routetrace a port to run on (a), a source name and port (b,c) and a target name and port (d,e), f is a debugging option that shows the path in more detail
+I have blurred my own ip, Nextplanon is my computer name
+
+![ROUTETRACE](https://github.com/hstrohbusch/UW-CS-Work/assets/71783165/e13492dc-3906-400b-b4d7-9ae068e6eeed)

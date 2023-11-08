@@ -1,0 +1,2465 @@
+('starting', 'build')
+
+**********************************************************************
+
+Test build
+build project using make
+
+**********************************************************************
+Trying to build project using make
+make
+gcc -Wall -Werror -c server.c
+gcc server.o -o server udp.c
+gcc -c udp.c -o udp.o
+gcc -fPIC -g -c -Wall mfs.c
+gcc -shared -Wl,-soname,libmfs.so -o libmfs.so mfs.o udp.o -lc
+export LD_LIBRARY_PATH=D_LIBRARY_PATH:.
+
+
+test build PASSED
+ (build project using make)
+
+('starting', 'shutdown')
+
+**********************************************************************
+
+Test shutdown
+init server and client then call shutdown
+
+**********************************************************************
+total blocks        36
+  inodes            32 [size of each: 128]
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 8592
+/tmp/tmpdzPZAt/p/server 8592 /home/strohbusch/private/cs537/p4/p4/handin/test.img
+inode bitmap address 1 [len 1]
+data bitmap address 2 [len 1]
+
+root type:0 root size:64
+direct pointers[0]:4 [1]:-1
+
+root dir entries
+0 .
+0 ..
+here is the port number 8592
+server:: waiting...
+server:: read message [size:4156 contents:(8)]
+MFS Shutdown
+
+
+test shutdown PASSED
+ (init server and client then call shutdown)
+
+('starting', 'creat')
+
+**********************************************************************
+
+Test creat
+creat a file and check with lookup
+
+**********************************************************************
+total blocks        36
+  inodes            32 [size of each: 128]
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 8903
+/tmp/tmpdzPZAt/p/server 8903 /home/strohbusch/private/cs537/p4/p4/handin/test.img
+inode bitmap address 1 [len 1]
+data bitmap address 2 [len 1]
+
+root type:0 root size:64
+direct pointers[0]:4 [1]:-1
+
+root dir entries
+0 .
+0 ..
+here is the port number 8903
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(8)]
+client:: received response create
+MFS Shutdown
+
+
+test creat PASSED
+ (creat a file and check with lookup)
+
+('starting', 'write')
+
+**********************************************************************
+
+Test write
+write then read one block
+
+**********************************************************************
+total blocks        36
+  inodes            32 [size of each: 128]
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 9656
+/tmp/tmpdzPZAt/p/server 9656 /home/strohbusch/private/cs537/p4/p4/handin/test.img
+inode bitmap address 1 [len 1]
+data bitmap address 2 [len 1]
+
+root type:0 root size:64
+direct pointers[0]:4 [1]:-1
+
+root dir entries
+0 .
+0 ..
+here is the port number 9656
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(8)]
+client:: received response create
+client:: request write with inum: 1 offset: 0
+client:: received response wrote in datablock -1236403592 
+client:: request read with offset 0
+client:: received response for read from 0 through 4096 and tried to read datablock 5 
+('START BLOCK 1\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00', '\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00END BLOCK 1')
+('START BLOCK 1\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00', '\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00END BLOCK 1')
+MFS Shutdown
+
+
+test write PASSED
+ (write then read one block)
+
+('starting', 'stat')
+
+**********************************************************************
+
+Test stat
+stat a regular file
+
+**********************************************************************
+total blocks        36
+  inodes            32 [size of each: 128]
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 5562
+/tmp/tmpdzPZAt/p/server 5562 /home/strohbusch/private/cs537/p4/p4/handin/test.img
+inode bitmap address 1 [len 1]
+data bitmap address 2 [len 1]
+
+root type:0 root size:64
+direct pointers[0]:4 [1]:-1
+
+root dir entries
+0 .
+0 ..
+here is the port number 5562
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(3)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(3)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(3)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(8)]
+client:: received response create
+client:: request write with inum: 1 offset: 0
+client:: received response wrote in datablock -1236403592 
+MFS Shutdown
+
+
+test stat PASSED
+ (stat a regular file)
+
+('starting', 'overwrite')
+
+**********************************************************************
+
+Test overwrite
+overwrite a block
+
+**********************************************************************
+total blocks        36
+  inodes            32 [size of each: 128]
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 6338
+/tmp/tmpdzPZAt/p/server 6338 /home/strohbusch/private/cs537/p4/p4/handin/test.img
+inode bitmap address 1 [len 1]
+data bitmap address 2 [len 1]
+
+root type:0 root size:64
+direct pointers[0]:4 [1]:-1
+
+root dir entries
+0 .
+0 ..
+here is the port number 6338
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(8)]
+client:: received response create
+client:: request write with inum: 1 offset: 0
+client:: received response wrote in datablock -1236403592 
+client:: request read with offset 0
+client:: received response for read from 0 through 4096 and tried to read datablock 5 
+client:: request write with inum: 1 offset: 0
+client:: received response wrote in datablock -1236403592 
+client:: request read with offset 0
+client:: received response for read from 0 through 4096 and tried to read datablock 6 
+MFS Shutdown
+
+
+test overwrite PASSED
+ (overwrite a block)
+
+('starting', 'maxfile')
+
+**********************************************************************
+
+Test maxfile
+write largest possible file
+
+**********************************************************************
+total blocks        39
+  inodes            128 [size of each: 128]
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 9720
+/tmp/tmpdzPZAt/p/server 9720 /home/strohbusch/private/cs537/p4/p4/handin/test.img
+client:: received response create
+client:: request write with inum: 1 offset: 0
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 4096
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 8192
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 12288
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 16384
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 20480
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 24576
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 28672
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 32768
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 36864
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 40960
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 45056
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 49152
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 53248
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 57344
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 61440
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 65536
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 69632
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 73728
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 77824
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 81920
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 86016
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 90112
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 94208
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 98304
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 102400
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 106496
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 110592
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 114688
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 118784
+client:: received response wrote in datablock -1236403592 
+client:: request read with offset 0
+client:: received response for read from 0 through 4096 and tried to read datablock 8 
+client:: request read with offset 4096
+client:: received response for read from 4096 through 8192 and tried to read datablock 9 
+client:: request read with offset 8192
+client:: received response for read from 8192 through 12288 and tried to read datablock 10 
+client:: request read with offset 12288
+client:: received response for read from 12288 through 16384 and tried to read datablock 11 
+client:: request read with offset 16384
+client:: received response for read from 16384 through 20480 and tried to read datablock 12 
+client:: request read with offset 20480
+client:: received response for read from 20480 through 24576 and tried to read datablock 13 
+client:: reinode bitmap address 1 [len 1]
+data bitmap address 2 [len 1]
+
+root type:0 root size:64
+direct pointers[0]:7 [1]:-1
+
+root dir entries
+0 .
+0 ..
+here is the port number 9720
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(8)]
+quest read with offset 24576
+client:: received response for read from 24576 through 28672 and tried to read datablock 14 
+client:: request read with offset 28672
+client:: received response for read from 28672 through 32768 and tried to read datablock 15 
+client:: request read with offset 32768
+client:: received response for read from 32768 through 36864 and tried to read datablock 16 
+client:: request read with offset 36864
+client:: received response for read from 36864 through 40960 and tried to read datablock 17 
+client:: request read with offset 40960
+client:: received response for read from 40960 through 45056 and tried to read datablock 18 
+client:: request read with offset 45056
+client:: received response for read from 45056 through 49152 and tried to read datablock 19 
+client:: request read with offset 49152
+client:: received response for read from 49152 through 53248 and tried to read datablock 20 
+client:: request read with offset 53248
+client:: received response for read from 53248 through 57344 and tried to read datablock 21 
+client:: request read with offset 57344
+client:: received response for read from 57344 through 61440 and tried to read datablock 22 
+client:: request read with offset 61440
+client:: received response for read from 61440 through 65536 and tried to read datablock 23 
+client:: request read with offset 65536
+client:: received response for read from 65536 through 69632 and tried to read datablock 24 
+client:: request read with offset 69632
+client:: received response for read from 69632 through 73728 and tried to read datablock 25 
+client:: request read with offset 73728
+client:: received response for read from 73728 through 77824 and tried to read datablock 26 
+client:: request read with offset 77824
+client:: received response for read from 77824 through 81920 and tried to read datablock 27 
+client:: request read with offset 81920
+client:: received response for read from 81920 through 86016 and tried to read datablock 28 
+client:: request read with offset 86016
+client:: received response for read from 86016 through 90112 and tried to read datablock 29 
+client:: request read with offset 90112
+client:: received response for read from 90112 through 94208 and tried to read datablock 30 
+client:: request read with offset 94208
+client:: received response for read from 94208 through 98304 and tried to read datablock 31 
+client:: request read with offset 98304
+client:: received response for read from 98304 through 102400 and tried to read datablock 32 
+client:: request read with offset 102400
+client:: received response for read from 102400 through 106496 and tried to read datablock 33 
+client:: request read with offset 106496
+client:: received response for read from 106496 through 110592 and tried to read datablock 34 
+client:: request read with offset 110592
+client:: received response for read from 110592 through 114688 and tried to read datablock 35 
+client:: request read with offset 114688
+client:: received response for read from 114688 through 118784 and tried to read datablock 36 
+client:: request read with offset 118784
+client:: received response for read from 118784 through 122880 and tried to read datablock 37 
+MFS Shutdown
+
+
+test maxfile PASSED
+ (write largest possible file)
+
+('starting', 'maxfile2')
+
+**********************************************************************
+
+Test maxfile2
+write more blocks than possible
+
+**********************************************************************
+total blocks        36
+  inodes            32 [size of each: 128]
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 5139
+/tmp/tmpdzPZAt/p/server 5139 /home/strohbusch/private/cs537/p4/p4/handin/test.img
+client:: received response create
+31
+client:: request write with inum: 1 offset: 0
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 4096
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 8192
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 12288
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 16384
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 20480
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 24576
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 28672
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 32768
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 36864
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 40960
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 45056
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 49152
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 53248
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 57344
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 61440
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 65536
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 69632
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 73728
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 77824
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 81920
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 86016
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 90112
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 94208
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 98304
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 102400
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 106496
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 110592
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 114688
+client:: received response wrote in datablock -1236403592 
+client:: request write with inum: 1 offset: 118784
+client:: received response wrote in datablock -1236403592 
+write more than need
+client:: request write with inum: 1 offset: 122880
+client:: received response wrote in datablock -285919840 
+client:: request read with offset 0
+client:: received response for read from 0 through 4096 and tried to read datablock 5 
+client:: request read with offset 4096
+client:: received response for read from 4096 through 8192 and tried to read datablock 6 
+client:: request read with offset 8192
+client:: received response for read from 8192 through 12288 and tried to read datablock 7 
+client:: request read with offset 12288
+client:: received response for read from 12288 through 16384 and tried to read datablock 8 
+client:: request read with offset 16384
+client:: received response for read from 16384 through 20480 and tried to read datablock 9 
+client:: requeinode bitmap address 1 [len 1]
+data bitmap address 2 [len 1]
+
+root type:0 root size:64
+direct pointers[0]:4 [1]:-1
+
+root dir entries
+0 .
+0 ..
+here is the port number 5139
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(8)]
+st read with offset 20480
+client:: received response for read from 20480 through 24576 and tried to read datablock 10 
+client:: request read with offset 24576
+client:: received response for read from 24576 through 28672 and tried to read datablock 11 
+client:: request read with offset 28672
+client:: received response for read from 28672 through 32768 and tried to read datablock 12 
+client:: request read with offset 32768
+client:: received response for read from 32768 through 36864 and tried to read datablock 13 
+client:: request read with offset 36864
+client:: received response for read from 36864 through 40960 and tried to read datablock 14 
+client:: request read with offset 40960
+client:: received response for read from 40960 through 45056 and tried to read datablock 15 
+client:: request read with offset 45056
+client:: received response for read from 45056 through 49152 and tried to read datablock 16 
+client:: request read with offset 49152
+client:: received response for read from 49152 through 53248 and tried to read datablock 17 
+client:: request read with offset 53248
+client:: received response for read from 53248 through 57344 and tried to read datablock 18 
+client:: request read with offset 57344
+client:: received response for read from 57344 through 61440 and tried to read datablock 19 
+client:: request read with offset 61440
+client:: received response for read from 61440 through 65536 and tried to read datablock 20 
+client:: request read with offset 65536
+client:: received response for read from 65536 through 69632 and tried to read datablock 21 
+client:: request read with offset 69632
+client:: received response for read from 69632 through 73728 and tried to read datablock 22 
+client:: request read with offset 73728
+client:: received response for read from 73728 through 77824 and tried to read datablock 23 
+client:: request read with offset 77824
+client:: received response for read from 77824 through 81920 and tried to read datablock 24 
+client:: request read with offset 81920
+client:: received response for read from 81920 through 86016 and tried to read datablock 25 
+client:: request read with offset 86016
+client:: received response for read from 86016 through 90112 and tried to read datablock 26 
+client:: request read with offset 90112
+client:: received response for read from 90112 through 94208 and tried to read datablock 27 
+client:: request read with offset 94208
+client:: received response for read from 94208 through 98304 and tried to read datablock 28 
+client:: request read with offset 98304
+client:: received response for read from 98304 through 102400 and tried to read datablock 29 
+client:: request read with offset 102400
+client:: received response for read from 102400 through 106496 and tried to read datablock 30 
+client:: request read with offset 106496
+client:: received response for read from 106496 through 110592 and tried to read datablock 31 
+client:: request read with offset 110592
+client:: received response for read from 110592 through 114688 and tried to read datablock 32 
+client:: request read with offset 114688
+client:: received response for read from 114688 through 118784 and tried to read datablock 33 
+client:: request read with offset 118784
+client:: received response for read from 118784 through 122880 and tried to read datablock 34 
+client:: request read with offset 122880
+client:: received response for read from 122880 through 126976 and tried to read datablock 5 
+MFS Shutdown
+
+
+test maxfile2 PASSED
+ (write more blocks than possible)
+
+('starting', 'dir1')
+
+**********************************************************************
+
+Test dir1
+check root for dot entries
+
+**********************************************************************
+total blocks        36
+  inodes            32 [size of each: 128]
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 8383
+/tmp/tmpdzPZAt/p/server 8383 /home/strohbusch/private/cs537/p4/p4/handin/test.img
+inode bitmap address 1 [len 1]
+data bitmap address 2 [len 1]
+
+root type:0 root size:64
+direct pointers[0]:4 [1]:-1
+
+root dir entries
+0 .
+0 ..
+here is the port number 8383
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(8)]
+MFS Shutdown
+
+
+test dir1 PASSED
+ (check root for dot entries)
+
+('starting', 'dir2')
+
+**********************************************************************
+
+Test dir2
+create a new directory and check it
+
+**********************************************************************
+total blocks        36
+  inodes            32 [size of each: 128]
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 9168
+/tmp/tmpdzPZAt/p/server 9168 /home/strohbusch/private/cs537/p4/p4/handin/test.img
+inode bitmap address 1 [len 1]
+data bitmap address 2 [len 1]
+
+root type:0 root size:64
+direct pointers[0]:4 [1]:-1
+
+root dir entries
+0 .
+0 ..
+here is the port number 9168
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(8)]
+client:: received response create
+MFS Shutdown
+
+
+test dir2 PASSED
+ (create a new directory and check it)
+
+('starting', 'baddir')
+
+**********************************************************************
+
+Test baddir
+try to create a file with a file parent inode
+
+**********************************************************************
+total blocks        36
+  inodes            32 [size of each: 128]
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 6990
+/tmp/tmpdzPZAt/p/server 6990 /home/strohbusch/private/cs537/p4/p4/handin/test.img
+inode bitmap address 1 [len 1]
+data bitmap address 2 [len 1]
+
+root type:0 root size:64
+direct pointers[0]:4 [1]:-1
+
+root dir entries
+0 .
+0 ..
+here is the port number 6990
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(8)]
+client:: received response create
+client:: received response create
+MFS Shutdown
+
+
+test baddir PASSED
+ (try to create a file with a file parent inode)
+
+('starting', 'baddir2')
+
+**********************************************************************
+
+Test baddir2
+try to lookup a file with a file parent inode
+
+**********************************************************************
+total blocks        36
+  inodes            32 [size of each: 128]
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 8016
+/tmp/tmpdzPZAt/p/server 8016 /home/strohbusch/private/cs537/p4/p4/handin/test.img
+inode bitmap address 1 [len 1]
+data bitmap address 2 [len 1]
+
+root type:0 root size:64
+direct pointers[0]:4 [1]:-1
+
+root dir entries
+0 .
+0 ..
+here is the port number 8016
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(8)]
+client:: received response create
+MFS Shutdown
+
+
+test baddir2 PASSED
+ (try to lookup a file with a file parent inode)
+
+('starting', 'unlink')
+
+**********************************************************************
+
+Test unlink
+unlink a file
+
+**********************************************************************
+total blocks        36
+  inodes            32 [size of each: 128]
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 5366
+/tmp/tmpdzPZAt/p/server 5366 /home/strohbusch/private/cs537/p4/p4/handin/test.img
+inode bitmap address 1 [len 1]
+data bitmap address 2 [len 1]
+
+root type:0 root size:64
+direct pointers[0]:4 [1]:-1
+
+root dir entries
+0 .
+0 ..
+here is the port number 5366
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(7)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(8)]
+client:: received response create
+MFS Shutdown
+
+
+test unlink PASSED
+ (unlink a file)
+
+('starting', 'unlink2')
+
+**********************************************************************
+
+Test unlink2
+unlink a directory
+
+**********************************************************************
+total blocks        36
+  inodes            32 [size of each: 128]
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 9897
+/tmp/tmpdzPZAt/p/server 9897 /home/strohbusch/private/cs537/p4/p4/handin/test.img
+inode bitmap address 1 [len 1]
+data bitmap address 2 [len 1]
+
+root type:0 root size:64
+direct pointers[0]:4 [1]:-1
+
+root dir entries
+0 .
+0 ..
+here is the port number 9897
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(7)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(8)]
+client:: received response create
+MFS Shutdown
+
+
+test unlink2 PASSED
+ (unlink a directory)
+
+('starting', 'empty')
+
+**********************************************************************
+
+Test empty
+unlink a non-empty directory
+
+**********************************************************************
+total blocks        36
+  inodes            32 [size of each: 128]
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 7053
+/tmp/tmpdzPZAt/p/server 7053 /home/strohbusch/private/cs537/p4/p4/handin/test.img
+inode bitmap address 1 [len 1]
+data bitmap address 2 [len 1]
+
+root type:0 root size:64
+direct pointers[0]:4 [1]:-1
+
+root dir entries
+0 .
+0 ..
+here is the port number 7053
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(7)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(7)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(7)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(8)]
+client:: received response create
+client:: received response create
+MFS Shutdown
+
+
+test empty PASSED
+ (unlink a non-empty directory)
+
+('starting', 'name')
+
+**********************************************************************
+
+Test name
+name too long
+
+**********************************************************************
+total blocks        36
+  inodes            32 [size of each: 128]
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 5467
+/tmp/tmpdzPZAt/p/server 5467 /home/strohbusch/private/cs537/p4/p4/handin/test.img
+inode bitmap address 1 [len 1]
+data bitmap address 2 [len 1]
+
+root type:0 root size:64
+direct pointers[0]:4 [1]:-1
+
+root dir entries
+0 .
+0 ..
+here is the port number 5467
+server:: waiting...
+server:: read message [size:4156 contents:(8)]
+MFS Shutdown
+
+
+test name PASSED
+ (name too long)
+
+('starting', 'persist')
+
+**********************************************************************
+
+Test persist
+restart server after creating a file
+
+**********************************************************************
+total blocks        36
+  inodes            32 [size of each: 128]
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 8730
+/tmp/tmpdzPZAt/p/server 8730 /home/strohbusch/private/cs537/p4/p4/handin/test.img
+inode bitmap address 1 [len 1]
+data bitmap address 2 [len 1]
+
+root type:0 root size:64
+direct pointers[0]:4 [1]:-1
+
+root dir entries
+0 .
+0 ..
+here is the port number 8730
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(4)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(8)]
+client:: received response create
+client:: request write with inum: 1 offset: 0
+client:: received response wrote in datablock -1236403592 
+client:: request read with offset 0
+client:: received response for read from 0 through 4096 and tried to read datablock 5 
+MFS Shutdown
+Starting server on port 8730
+/tmp/tmpdzPZAt/p/server 8730 /home/strohbusch/private/cs537/p4/p4/handin/test.img
+inode bitmap address 1 [len 1]
+data bitmap address 2 [len 1]
+
+root type:0 root size:96
+direct pointers[0]:4 [1]:-1
+
+root dir entries
+0 .
+0 ..
+here is the port number 8730
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(5)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(8)]
+client:: request read with offset 0
+client:: received response for read from 0 through 4096 and tried to read datablock 5 
+MFS Shutdown
+
+
+test persist PASSED
+ (restart server after creating a file)
+
+('starting', 'bigdir')
+
+**********************************************************************
+
+Test bigdir
+create a directory with 126 files
+
+**********************************************************************
+total blocks        39
+  inodes            128 [size of each: 128]
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 6909
+/tmp/tmpdzPZAt/p/server 6909 /home/strohbusch/private/cs537/p4/p4/handin/test.img
+inode bitmap address 1 [len 1]
+data bitmap address 2 [len 1]
+
+root type:0 root size:64
+direct pointers[0]:7 [1]:-1
+
+root dir entries
+0 .
+0 ..
+here is the port number 6909
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: receiveserver:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(8)]
+d response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+MFS Shutdown
+
+
+test bigdir PASSED
+ (create a directory with 126 files)
+
+('starting', 'deep')
+
+**********************************************************************
+
+Test deep
+create many deeply nested directories
+
+**********************************************************************
+total blocks        39
+  inodes            128 [size of each: 128]
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 9244
+/tmp/tmpdzPZAt/p/server 9244 /home/strohbusch/private/cs537/p4/p4/handin/test.img
+inode bitmap address 1 [len 1]
+data bitmap address 2 [len 1]
+
+root type:0 root size:64
+direct pointers[0]:7 [1]:-1
+
+root dir entries
+0 .
+0 ..
+here is the port number 9244
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(6)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(2)]
+server:: reply
+server:: waiting...
+server:: read message [size:4156 contents:(8)]
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+client:: received response create
+MFS Shutdown
+
+
+test deep PASSED
+ (create many deeply nested directories)
+
+**********************************************************************
+Summary:
+test build PASSED
+ (build project using make)
+
+test shutdown PASSED
+ (init server and client then call shutdown)
+
+test creat PASSED
+ (creat a file and check with lookup)
+
+test write PASSED
+ (write then read one block)
+
+test stat PASSED
+ (stat a regular file)
+
+test overwrite PASSED
+ (overwrite a block)
+
+test maxfile PASSED
+ (write largest possible file)
+
+test maxfile2 PASSED
+ (write more blocks than possible)
+
+test dir1 PASSED
+ (check root for dot entries)
+
+test dir2 PASSED
+ (create a new directory and check it)
+
+test baddir PASSED
+ (try to create a file with a file parent inode)
+
+test baddir2 PASSED
+ (try to lookup a file with a file parent inode)
+
+test unlink PASSED
+ (unlink a file)
+
+test unlink2 PASSED
+ (unlink a directory)
+
+test empty PASSED
+ (unlink a non-empty directory)
+
+test name PASSED
+ (name too long)
+
+test persist PASSED
+ (restart server after creating a file)
+
+test bigdir PASSED
+ (create a directory with 126 files)
+
+test deep PASSED
+ (create many deeply nested directories)
+
+Passed 19 of 19 tests.
+Overall 19 of 19

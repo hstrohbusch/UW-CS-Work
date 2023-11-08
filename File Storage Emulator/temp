@@ -1,2 +1,0 @@
-memcpy(image + (tempInode->direct[0] * UFS_BLOCK_SIZE) + (j*sizeof(MFS_DirEnt_t)), m->name, 28);
-                            memcpy(image + (tempInode->direct[0] * UFS_BLOCK_SIZE) + (j*sizeof(MFS_DirEnt_t))+28, &iptr, 28);

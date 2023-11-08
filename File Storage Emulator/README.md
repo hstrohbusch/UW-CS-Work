@@ -10,3 +10,7 @@ The Makefile builds client and server executables. Type make to do this.
 To run: type server & to run the server in the background; then type client to run the client. You will likely then want to kill the server if you are done.
 
 If you want to run these on different machines, you'll have to change the client to send messages to the machine the server is running upon, instead of localhost.
+
+.........
+
+This project was built from the assigned libraries that were assigned to us. Our main work was to put everything together to emulate file storage and accessing. We were also given a testing script, the results of which are in the file "runtests.log". I received full points for this project.

@@ -1,0 +1,17 @@
+This is METAFONT, Version 2.71828182 (preloaded base=mf 2022.8.29)  18 DEC 2022 19:46
+**ufs.h handin/
+(ufs.h
+>> #ifndef.__ufs_h__#define.__ufs_h__#define.UFS_DIRECTORY
+! Isolated expression.
+<to be read again> 
+                   (
+l.4 #define UFS_DIRECTORY    (
+                              0)
+? ls
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, E to edit your file,
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? X
+
